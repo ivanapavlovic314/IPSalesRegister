@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import javafx.collections.ObservableList?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UgovorController">
+    <stylesheets>
+        <URL value="@/css/styles.css" />
+    </stylesheets>
+    <children>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <TabPane layoutX="-4.0" layoutY="-7.0" prefHeight="400.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Novi Ugovor">
+                            <content>
+                                <AnchorPane id="pano" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="800.0">
+                                    <children>
+                                               
+                                        <Label id="naslov" layoutX="215.0" layoutY="31.0" text="FORMA PRODAJE INTERNET PAKETA" />
+                                                
+                                        <Label layoutX="195.0" layoutY="99.0" text="Ime i prezime Korisnika" />
+                                        <Label layoutX="195.0" layoutY="130.0" prefHeight="17.0" prefWidth="134.0" text="Adresa Korisnika" />
+                                        <Label layoutX="195.0" layoutY="158.0" text="Trajanje Ugovora" /> 
+                                        <Label layoutX="195.0" layoutY="192.0" text="Brzina internet paketa"/>
+                                        <Label layoutX="195.0" layoutY="227.0" text="Protok internet paketa" />
+                                                
+                                        <TextField fx:id="iip_polje" layoutX="365.0" layoutY="95.0" prefHeight="25.0" prefWidth="241.0" />
+                                        <TextField fx:id="adr_polje" layoutX="365.0" layoutY="126.0" prefHeight="25.0" prefWidth="242.0" />
+                                                
+                                        <ComboBox fx:id="brzinaCombo" layoutX="365.0" layoutY="188.0" prefHeight="25.0" prefWidth="138.0" promptText="Izaberi iz ponude:" />
+                                        <ComboBox fx:id="protokCombo" layoutX="365.0" layoutY="223.0" prefHeight="25.0" prefWidth="136.0" promptText="Izaberi iz ponude:" />    
+                                              
+                                                
+                                        <Button id="add" layoutX="334.0" layoutY="300.0" mnemonicParsing="false" onAction="#addUgovor" prefHeight="25.0" prefWidth="179.0" text="POTVRDI" />
+                                        <CheckBox fx:id="potvrda" layoutX="195.0" layoutY="273.0" mnemonicParsing="false" text="Saglasan/-na sam sa pravilima i obavezama sklapanja Ugovora" />
+                                                
+                                        <RadioButton layoutX="365.0" layoutY="158.0" mnemonicParsing="false" text="12 meseci">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="trajanjeRbg" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton layoutX="480.0" layoutY="158.0" mnemonicParsing="false" text="24 meseca" toggleGroup="$trajanjeRbg" />
+                                                
+                                            
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Evidencija ugovora">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="800.0">
+                                    <children>
+                                        <TableView fx:id="tableView" layoutX="5.0" layoutY="38.0" prefHeight="330.0" prefWidth="800.0">
+                                            <columns>
+                                                <TableColumn prefWidth="121.0" text="Br. Ugovora">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="broj" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn prefWidth="155.0" text="Ime i prezime korisnika">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="imeiprezime" />
+                                                    </cellValueFactory>
+                                                </TableColumn>    
+                                                <TableColumn prefWidth="205.0" text="Adresa korisnika">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="adresa" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn prefWidth="110.0" text="Trajanje ugovora">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="trajanje" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn prefWidth="127.0" text="Brzina protoka [Mbit]">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="brzina" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn minWidth="-Infinity" prefWidth="76.0" text="Protok [GB]">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="protok" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="deleteBtn" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#deleteUgovor" text="BRISANJE" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

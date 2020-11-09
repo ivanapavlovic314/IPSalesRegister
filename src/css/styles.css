@@ -1,0 +1,38 @@
+
+
+#pano Label, RadioButton, CheckBox {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
+
+#pano Label {
+    -fx-font-weight: bold;
+}
+
+#pano {
+
+    -fx-background-color: linear-gradient(to right, #453FAB, #43EEF7);
+
+}
+
+#naslov {
+
+    -fx-font-size: 20px;
+    -fx-padding: 5px 10px 5px 10px;
+    -fx-text-alignment: justify;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#add {
+    -fx-background-color: #AAA6F7;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#add:active, #add:hover {
+    -fx-border-color: white;
+    -fx-border-style:dashed;
+    -fx-border-radius: 10px;
+}
